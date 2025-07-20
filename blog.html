@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexcent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f1f5f9;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow px-4 md:px-8 py-4">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#22c55e" />
+            <polygon points="10,22 16,10 22,22" fill="white" />
+          </svg>
+          <span class="text-2xl font-bold text-gray-900">Nexcent</span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index2.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >Home</a
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 transition"
+            >Features</a
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 transition"
+            >Community</a
+          >
+          <a
+            href="blog.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >Blog</a
+          >
+
+          <a
+            href="aboutUs.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition whitespace-nowrap"
+            >Register Now &rarr;</a
+          >
+        </nav>
+        <div
+          x-data="{ open: false }"
+          class="md:hidden flex items-center relative"
+        >
+          <button
+            @click="open = !open"
+            :aria-expanded="open.toString()"
+            aria-label="Open Menu"
+          >
+            <svg
+              x-show="!open"
+              class="w-7 h-7 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              x-show="open"
+              class="w-7 h-7 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div
+            x-show="open"
+            @click.away="open = false"
+            class="absolute top-16 right-0 w-56 bg-white shadow-lg z-50 flex flex-col items-end px-8 py-6 space-y-4 rounded-md"
+          >
+            <nav class="flex flex-col space-y-4 w-full">
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Home</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Features</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Community</a
+              >
+              <a
+                href="blog.html"
+                class="text-gray-700 hover:text-green-600 transition"
+                >Blog</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Pricing</a
+              >
+            </nav>
+            <a
+              href="#"
+              class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition w-full text-center"
+              >Register Now &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow w-full px-4">
+      <section class="flex flex-col items-center px-4 pt-8 md:mx-auto md:mt-14">
+        <h1
+          class="text-3xl md:text-6xl font-bold text-center px-4 text-pretty pb-4"
+        >
+          Inside Design: Stories and interviews
+        </h1>
+        <p class="text-center pb-8">
+          Subscribe to learn about new product features, the latest in
+          technology, and products
+        </p>
+        <div class="relative md:flex md:items-center md:max-w-md mx-auto">
+          <input
+            type="search"
+            placeholder="Enter your email"
+            class="w-full sm:w-1/2 md:w-full rounded-md border border-gray-300 px-4 py-2.5 pr-32 focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none"
+            aria-label="Enter your email"
+          />
+          <a
+            href="#"
+            class="absolute top-1/2 right-1 md:right-2 md:static md:ml-4 bg-green-500 text-white py-2 px-5 rounded-md hover:bg-green-600 transform -translate-y-1/2 transition md:translate-y-0"
+          >
+            Subscribe
+          </a>
+        </div>
+      </section>
+
+      <section class="md:px-12 bg-gray-50">
+        <h2 class="text-2xl font-bold mx-3 mt-12 mb-4 md:mt-14">
+          Recent blog posts
+        </h2>
+        <div class="my-8 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- LEFT: First big post (Single Column) -->
+          <article
+            class="bg-white rounded shadow-md flex flex-col h-full hover:shadow-lg transition"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1752497523819-eaf80e1fd32a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+              class="rounded-t w-full h-1/2 object-cover"
+            />
+            <div class="flex flex-col flex-1">
+              <p class="text-[11px] px-6 mt-4 text-gray-600">
+                Olivia Rhya · 20 Jan 2024
+              </p>
+              <h3 class="text-2xl px-6 pt-3 font-semibold">
+                Conversation with London Makr & Co.
+              </h3>
+              <p class="px-6 my-3 text-gray-600 flex-1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+                amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
+                Pellentesque placerat vestibulum lorem sed porta. Nullam mattis
+                tristique iaculis. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam
+                vitae est varius fringilla.
+              </p>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Interviews</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- RIGHT: Two stacked posts -->
+          <div class="flex flex-col gap-8 h-full">
+            <!-- Second post -->
+            <article
+              class="bg-white rounded shadow-md flex md:flex-row flex-col h-1/2 flex-1 hover:shadow-lg transition"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1752416505247-41c49cafce2c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
+                alt=""
+                class="rounded-t w-full h-64 object-cover md:w-1/3 md:h-auto md:rounded-l md:rounded-t-none"
+              />
+              <div class="flex flex-col flex-1">
+                <p class="text-[11px] px-6 mt-4 text-gray-600">
+                  Olivia Rhya · 20 Jan 2024
+                </p>
+                <h3 class="text-2xl px-6 pt-3 font-semibold">
+                  Conversation with London Makr & Co.
+                </h3>
+                <p class="px-6 my-3 text-gray-600 flex-1">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+                <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                  <a
+                    class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                    href="#"
+                    >Design</a
+                  >
+                  <a
+                    class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                    href="#"
+                    >Research</a
+                  >
+                </div>
+              </div>
+            </article>
+            <!-- Third post -->
+            <article
+              class="bg-white rounded shadow-md flex md:flex-row flex-col h-1/2 flex-1 hover:shadow-lg transition"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1752407828561-2450ced77979?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8"
+                alt=""
+                class="rounded-t w-full h-64 object-cover md:w-1/3 md:h-auto md:rounded-l md:rounded-t-none"
+              />
+              <div class="flex flex-col flex-1">
+                <p class="text-[11px] px-6 mt-4 text-gray-600">
+                  Olivia Rhya · 20 Jan 2024
+                </p>
+                <h3 class="text-2xl px-6 pt-3 font-semibold">
+                  Conversation with London Makr & Co.
+                </h3>
+                <p class="px-6 my-3 text-gray-600 flex-1">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+                <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                  <a
+                    class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                    href="#"
+                    >Design</a
+                  >
+                  <a
+                    class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                    href="#"
+                    >Research</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mt-12 w-full md:mx-auto">
+        <h2 class="text-2xl font-bold">All blog posts</h2>
+        <div
+          class="flex rounded-md flex-col md:grid md grid-cols-3 md:gap-3 justify-center"
+        >
+          <article
+            class="bg-gray-50n flex flex-col flex-1 my-4 bg-white rounded-md hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://images.unsplash.com/photo-1744273556970-d5cff25b2b4a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-gray-50n flex flex-col flex-1 bg-white rounded-md my-4 hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://images.unsplash.com/photo-1682685797366-715d29e33f9d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-gray-50n flex flex-col flex-1 my-4 bg-white rounded-md hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://images.unsplash.com/photo-1744059509939-866e0fb167c6?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <div
+          class="flex rounded-md flex-col md:grid md grid-cols-3 md:gap-3 justify-center"
+        >
+          <article
+            class="bg-gray-50n flex flex-col flex-1 my-4 bg-white rounded-md hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1752155110219-c327e30b05a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1OHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-gray-50n flex flex-col flex-1 bg-white rounded-md my-4 hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://images.unsplash.com/photo-1752429475222-8eb8c9e7c531?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzNXx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-gray-50n flex flex-col flex-1 my-4 bg-white rounded-md hover:shadow-lg transition"
+          >
+            <div class="">
+              <img
+                src="https://images.unsplash.com/photo-1682687982167-d7fb3ed8541d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzN3x8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                class="rounded-t-md"
+              />
+              <div class="flex flex-col mx-6 py-4">
+                <p class="text-[10px] mb-4">Olivia Rhya. 20 Jan 2024</p>
+                <h2 class="text-2xl font-semibold text-pretty pb-3">
+                  Conversation with London Makr & Co.
+                </h2>
+                <p class="text-gray-600">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sit amet justo ipsum. Sed accumsan quam vitae est varius
+                  fringilla. Pellentesque placerat vestibulum lorem sed porta.
+                  Nullam mattis tristique iaculis.
+                </p>
+              </div>
+              <div class="flex gap-3 px-6 mb-4 mt-auto flex-wrap">
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Design</a
+                >
+                <a
+                  class="border border-green-500 hover:bg-green-600 hover:text-white px-2 py-0.5 rounded-full text-xs"
+                  href="#"
+                  >Research</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex justify-between mx-3 items-center pb-14 md:mx-16">
+          <a
+            href="#"
+            class="border border-green-500 py-1.5 px-3 rounded-md hover:bg-green-600 hover:text-white"
+            ><i class="fa-solid fa-arrow-left mr-1 hidden md:block"></i>
+            Previews</a
+          >
+          <div class="">
+            <li class="flex md:gap-12 gap-5">
+              <ul
+                class="hover:bg-green-600 hover:text-white py-1 px-3 rounded-md transform"
+              >
+                1
+              </ul>
+              <ul
+                class="hover:bg-green-600 hover:text-white py-1 px-3 rounded-md"
+              >
+                2
+              </ul>
+              <ul
+                class="hidden md:block hover:bg-green-600 hover:text-white py-1 px-3 rounded-md"
+              >
+                3
+              </ul>
+              <ul>
+                ...
+              </ul>
+              <ul
+                class="hidden hover:bg-green-600 hover:text-white py-1 px-3 rounded-md transform md:block"
+              >
+                8
+              </ul>
+              <ul
+                class="hover:bg-green-600 hover:text-white py-1 px-3 rounded-md hidden md:block"
+              >
+                9
+              </ul>
+              <ul
+                class="hover:bg-green-600 hover:text-white py-1 px-3 rounded-md"
+              >
+                10
+              </ul>
+            </li>
+          </div>
+          <a
+            href="#"
+            class="border border-green-500 py-1.5 px-3 rounded-md hover:bg-green-600 hover:text-white"
+          >
+            Next <i class="fa-solid fa-arrow-right ml-1"></i
+          ></a>
+        </div>
+      </section>
+
+      <section>
+        <div class="mx-3 container md:grid md:grid-cols-2 md:mx-auto">
+          <div class="flex flex-col items-center md:items-start">
+            <h2 class="text-2xl text-center md:text-start font-semibold my-2">
+              Sign up to our newsletter
+            </h2>
+            <p class="text-center mb-4 md:text-start">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+          <div
+            class="relative md:flex md:items-center md:justify-end md:max-w-md mx-auto"
+          >
+            <input
+              type="search"
+              placeholder="Enter your email"
+              class="w-full sm:w-1/2 md:w-full rounded-md border border-gray-300 px-4 py-2.5 pr-32 focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none"
+              aria-label="Enter your email"
+            />
+            <a
+              href="#"
+              class="absolute top-1/2 right-1 md:right-2 md:static md:ml-4 bg-green-500 text-white py-2 px-5 rounded-md hover:bg-green-600 transform -translate-y-1/2 transition md:translate-y-0"
+            >
+              Subscribe
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section>
+      <footer
+        class="bg-[#263238] w-full py-8 px-4 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-white mt-6 md:mt-14"
+      >
+        <div class="flex flex-col items-start">
+          <h2 class="text-3xl font-bold py-4">Nexcent</h2>
+          <p>Copyright © 2020 Landify UI Kit.</p>
+          <p class="pb-2">All rights reserved</p>
+          <div class="flex gap-5 pt-2">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <div class="flex flex-col">
+            <h3 class="text-2xl font-semibold py-4">Company</h3>
+            <a href="#" class="pb-1 hover:underline">About us</a>
+            <a href="#" class="pb-1 hover:underline">Blog</a>
+            <a href="#" class="pb-1 hover:underline">Contact us</a>
+            <a href="#" class="pb-1 hover:underline">Pricing</a>
+            <a href="#" class="pb-1 hover:underline">Testimonials</a>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-2xl font-semibold py-4">Support</h3>
+            <a href="#" class="pb-1 hover:underline">Help Center</a>
+            <a href="#" class="pb-1 hover:underline">Documentation</a>
+            <a href="#" class="pb-1 hover:underline">Privacy Policy</a>
+            <a href="#" class="pb-1 hover:underline">Terms of Service</a>
+            <a href="#" class="pb-1 hover:underline">Status</a>
+          </div>
+        </div>
+
+        <div class="max-w-md mx-auto w-full">
+          <h3 class="text-lg font-semibold mb-4">Stay up to date</h3>
+          <form action="#" class="relative w-full">
+            <span
+              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search..."
+              class="w-full rounded-full border border-gray-300 bg-white py-3 pl-10 pr-4 text-gray-900 placeholder-gray-400 focus:border-lime-400 focus:ring-2 focus:ring-lime-300 focus:outline-none transition duration-300"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </footer>
+    </section>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>

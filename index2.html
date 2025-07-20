@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexcent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f1f5f9;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="bg-white shadow px-4 md:px-8 py-4">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#22c55e" />
+            <polygon points="10,22 16,10 22,22" fill="white" />
+          </svg>
+          <span class="text-2xl font-bold text-gray-900">Nexcent</span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index2.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >Home</a
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 transition"
+            >Features</a
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 transition"
+            >Community</a
+          >
+          <a
+            href="blog.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >Blog</a
+          >
+
+          <a
+            href="aboutUs.html"
+            class="text-gray-700 hover:text-green-600 transition"
+            >About Us</a
+          >
+          <a
+            href="#"
+            class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition whitespace-nowrap"
+            >Register Now &rarr;</a
+          >
+        </nav>
+        <div
+          x-data="{ open: false }"
+          class="md:hidden flex items-center relative"
+        >
+          <button
+            @click="open = !open"
+            :aria-expanded="open.toString()"
+            aria-label="Open Menu"
+          >
+            <svg
+              x-show="!open"
+              class="w-7 h-7 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              x-show="open"
+              class="w-7 h-7 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div
+            x-show="open"
+            @click.away="open = false"
+            class="absolute top-16 right-0 w-56 bg-white shadow-lg z-50 flex flex-col items-end px-8 py-6 space-y-4 rounded-md"
+          >
+            <nav class="flex flex-col space-y-4 w-full">
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Home</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Features</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Community</a
+              >
+              <a
+                href="blog.html"
+                class="text-gray-700 hover:text-green-600 transition"
+                >Blog</a
+              >
+              <a href="#" class="text-gray-700 hover:text-green-600 transition"
+                >Pricing</a
+              >
+            </nav>
+            <a
+              href="#"
+              class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition w-full text-center"
+              >Register Now &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow w-full">
+      <section class="w-full bg-[#f7f8fa] pb-64 md:py-40 md:px-8">
+        <div
+          class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 h-[400px]"
+        >
+          <div
+            class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-12 text-center md:text-left"
+          >
+            <h1
+              class="text-4xl md:text-6xl font-bold text-[#4D4D4D] mb-2 leading-tight"
+            >
+              Lessons and insights<br />
+              <span class="text-green-600">from 8 years</span>
+            </h1>
+            <p class="text-[#4D4D4D] text-lg mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+              amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
+              Pellentesque placerat vestibulum lorem sed porta. Nullam mattis
+              tristique iaculis.
+            </p>
+            <a
+              href="#"
+              class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-medium transition inline-block"
+              >Register</a
+            >
+          </div>
+          <div class="w-full md:w-1/2 flex justify-center">
+            <img
+              src="https://png.pngtree.com/png-clipart/20241110/original/pngtree-green-earth-with-environmental-transformation-on-transparent-background-png-image_16807747.png"
+              alt="hero"
+              class="max-w-xs md:max-w-md w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full bg-white py-12">
+        <div class="container mx-auto px-4 flex flex-col items-center">
+          <h2 class="text-2xl md:text-4xl font-semibold text-[#4D4D4D] mb-2">
+            Our Clients
+          </h2>
+          <p class="text-[#4D4D4D] mb-8 text-center text-base">
+            We have been working with some Fortune 500+ clients
+          </p>
+          <div
+            class="flex flex-wrap justify-between items-center gap-x-8 gap-y-6 w-full max-w-5xl bg-white"
+          >
+            <img
+              src="https://w0.peakpx.com/wallpaper/167/487/HD-wallpaper-logo-graphic-design-simple-background-white-background.jpg"
+              alt="client1"
+              class="h-14 md:h-20 w-auto object-contain grayscale bg-white"
+            />
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/008/826/851/non_2x/abstract-initial-letter-mz-logo-in-black-color-isolated-in-white-background-applied-for-clothing-brand-logo-also-suitable-for-the-brands-or-companies-that-have-an-initial-name-zm-vector.jpg"
+              alt="client2"
+              class="h-14 md:h-20 w-auto object-contain grayscale"
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDt8D3Alk_DoQtl98CtoWgkISvOv_HtuTyydpnJ4dMZqoegfy2uEl3788T54CkpjRWq5k&usqp=CAU"
+              alt="client3"
+              class="h-14 md:h-20 w-auto object-contain grayscale"
+            />
+            <img
+              src="https://w0.peakpx.com/wallpaper/167/487/HD-wallpaper-logo-graphic-design-simple-background-white-background.jpg"
+              alt="client1"
+              class="h-14 md:h-20 w-auto object-contain grayscale bg-white"
+            />
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/008/826/851/non_2x/abstract-initial-letter-mz-logo-in-black-color-isolated-in-white-background-applied-for-clothing-brand-logo-also-suitable-for-the-brands-or-companies-that-have-an-initial-name-zm-vector.jpg"
+              alt="client2"
+              class="h-14 md:h-20 w-auto object-contain grayscale"
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDt8D3Alk_DoQtl98CtoWgkISvOv_HtuTyydpnJ4dMZqoegfy2uEl3788T54CkpjRWq5k&usqp=CAU"
+              alt="client3"
+              class="h-14 md:h-20 w-auto object-contain grayscale"
+            />
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDt8D3Alk_DoQtl98CtoWgkISvOv_HtuTyydpnJ4dMZqoegfy2uEl3788T54CkpjRWq5k&usqp=CAU"
+              alt="client3"
+              class="h-14 md:h-20 w-auto object-contain grayscale"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full bg-white pt-16 md:pb-12 px-4">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-2xl md:text-4xl font-semibold text-[#4D4D4D] text-center mb-4"
+          >
+            Manage your entire community<br class="hidden md:block md:pb-4" />
+            <span>in a single system</span>
+          </h2>
+          <p class="text-[#4D4D4D] text-center mb-12">
+            Who is Nexcent suitable for?
+          </p>
+          <div class="gap-28 max-w-7xl mx-auto flex flex-col md:flex-row">
+            <div
+              class="rounded-xl shadow p-8 flex flex-col items-center text-center hover:shadow-lg transition"
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/024/659/476/small_2x/the-lion-head-in-crown-hand-draw-vintage-engraving-black-and-white-illustration-on-a-white-background-vector.jpg"
+                alt="Membership Organisations"
+                class="h-14 mb-4"
+              />
+              <h3 class="text-lg font-semibold mb-2">
+                Membership Organisations
+              </h3>
+              <p class="text-gray-500">
+                Our membership management software provides full automation of
+                membership renewals and payments
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl shadow p-8 flex flex-col items-center text-center hover:shadow-lg transition"
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/024/659/476/small_2x/the-lion-head-in-crown-hand-draw-vintage-engraving-black-and-white-illustration-on-a-white-background-vector.jpg"
+                alt="National Associations"
+                class="h-14 mb-4"
+              />
+              <h3 class="text-lg font-semibold mb-2">National Associations</h3>
+              <p class="text-gray-500">
+                Our membership management software provides full automation of
+                membership renewals and payments
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl shadow p-8 flex flex-col items-center text-center hover:shadow-lg transition"
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/thumbnails/024/659/476/small_2x/the-lion-head-in-crown-hand-draw-vintage-engraving-black-and-white-illustration-on-a-white-background-vector.jpg"
+                alt="Clubs And Groups"
+                class="h-14 mb-4"
+              />
+              <h3 class="text-lg font-semibold mb-2">Clubs And Groups</h3>
+              <p class="text-gray-500">
+                Our membership management software provides full automation of
+                membership renewals and payments
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="flex justify-end items-center bg-white md:flex-row flex-col mx-auto md:py-16 py-8"
+        >
+          <div class="w-5/6 flex text-center justify-center">
+            <img
+              class="max-w-xs md:max-w-md md:w-full w-44"
+              src="https://img.freepik.com/free-photo/digital-art-with-planet-earth_23-2151064509.jpg?semt=ais_items_boosted&w=740"
+              alt=""
+            />
+          </div>
+          <div
+            class="container flex justify-center items-center md:items-start flex-col"
+          >
+            <h2
+              class="md:text-4xl text-2xl font-semibold pb-4 text-pretty w-3/4 text-[#4D4D4D]"
+            >
+              The unseen of spending three years at Pixelgrade
+            </h2>
+            <p class="text-pretty w-2/3 pb-8 text-[#4D4D4D]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+              amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
+              Pellentesque placerat vestibulum lorem sed porta. Nullam mattis
+              tristique iaculis. Nullam pulvinar sit amet risus pretium auctor.
+              Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec
+              elementum pulvinar odio.
+            </p>
+            <a
+              class="bg-green-500 px-8 py-4 rounded-md hover:bg-green-600 text-white"
+              href="#"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12">
+        <div
+          class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12 px-4"
+        >
+          <div>
+            <h2
+              class="text-3xl md:text-4xl font-semibold text-[#4D4D4D] mb-2 leading-tight"
+            >
+              Helping a local<br />
+              <span class="text-green-600">business reinvent itself</span>
+            </h2>
+            <p class="max-w-md text-[#4D4D4D]">
+              We reached here with our hard work and dedication
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-1/2 text-[#4D4D4D]"
+          >
+            <div class="flex items-center gap-4">
+              <i class="fa-regular fa-user text-4xl text-green-600"></i>
+              <div>
+                <h3 class="text-2xl font-bold text-[#4D4D4D]">2,245,341</h3>
+                <p class="text-gray-500 text-sm mt-1">Members</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <i class="fa-solid fa-network-wired text-4xl text-green-600"></i>
+              <div>
+                <h3 class="text-2xl font-bold text-[#4D4D4D]">1,467,328</h3>
+                <p class="text-gray-500 text-sm mt-1">Clubs in the Dk</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <i
+                class="fa-regular fa-calendar-check text-4xl text-green-600"
+              ></i>
+              <div>
+                <h3 class="text-2xl font-bold text-[#4D4D4D]">828,867</h3>
+                <p class="text-gray-500 text-sm mt-1">Event Bookings</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <i class="fa-regular fa-credit-card text-4xl text-green-600"></i>
+              <div>
+                <h3 class="text-2xl font-bold text-[#4D4D4D]">1,926,436</h3>
+                <p class="text-gray-500 text-sm mt-1">Payments</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="flex justify-end items-center bg-white md:flex-row flex-col mx-auto md:py-16 py-8"
+        >
+          <div class="w-5/6 flex text-center justify-center">
+            <img
+              class="max-w-xs md:max-w-md w-full"
+              src="https://img.freepik.com/free-photo/digital-art-with-planet-earth_23-2151064509.jpg?semt=ais_items_boosted&w=740"
+              alt=""
+            />
+          </div>
+          <div
+            class="container flex justify-center items-center md:items-start flex-col"
+          >
+            <h2
+              class="md:text-4xl text-2xl font-semibold pb-4 text-pretty w-3/4 text-[#4D4D4D]"
+            >
+              The unseen of spending three years at Pixelgrade
+            </h2>
+            <p class="text-pretty w-2/3 pb-8 text-[#4D4D4D]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
+              amet justo ipsum. Sed accumsan quam vitae est varius fringilla.
+              Pellentesque placerat vestibulum lorem sed porta. Nullam mattis
+              tristique iaculis. Nullam pulvinar sit amet risus pretium auctor.
+              Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec
+              elementum pulvinar odio.
+            </p>
+            <a
+              class="bg-green-500 px-8 py-4 rounded-md hover:bg-green-600 text-white"
+              href="#"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          class="container w-full h-full mx-auto flex flex-col justify-center items-center py-8 md:py-16 text-center"
+        >
+          <h2 class="md:text-5xl font-bold text-4xl text-[#4D4D4D] pt-4 pb-12">
+            Pellentesque suscipit <br />fringilla libero eu.
+          </h2>
+          <a
+            class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-md text-white"
+            href="#"
+            >Get a Demmo &rarr;</a
+          >
+        </div>
+      </section>
+
+      <section>
+        <footer
+          class="bg-[#263238] w-full py-8 px-4 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-white mt-6 md:mt-14"
+        >
+          <div class="flex flex-col items-start">
+            <h2 class="text-3xl font-bold py-4">Nexcent</h2>
+            <p>Copyright © 2020 Landify UI Kit.</p>
+            <p class="pb-2">All rights reserved</p>
+            <div class="flex gap-5 pt-2">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-8">
+            <div class="flex flex-col">
+              <h3 class="text-2xl font-semibold py-4">Company</h3>
+              <a href="#" class="pb-1 hover:underline">About us</a>
+              <a href="#" class="pb-1 hover:underline">Blog</a>
+              <a href="#" class="pb-1 hover:underline">Contact us</a>
+              <a href="#" class="pb-1 hover:underline">Pricing</a>
+              <a href="#" class="pb-1 hover:underline">Testimonials</a>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-2xl font-semibold py-4">Support</h3>
+              <a href="#" class="pb-1 hover:underline">Help Center</a>
+              <a href="#" class="pb-1 hover:underline">Documentation</a>
+              <a href="#" class="pb-1 hover:underline">Privacy Policy</a>
+              <a href="#" class="pb-1 hover:underline">Terms of Service</a>
+              <a href="#" class="pb-1 hover:underline">Status</a>
+            </div>
+          </div>
+
+          <div class="max-w-md mx-auto w-full">
+            <h3 class="text-lg font-semibold mb-4">Stay up to date</h3>
+            <form action="#" class="relative w-full">
+              <span
+                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input
+                type="search"
+                name="search"
+                id="search"
+                placeholder="Search..."
+                class="w-full rounded-full border border-gray-300 bg-white py-3 pl-10 pr-4 text-gray-900 placeholder-gray-400 focus:border-lime-400 focus:ring-2 focus:ring-lime-300 focus:outline-none transition duration-300"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>
